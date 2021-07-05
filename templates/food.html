@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Foods</h2>
+
+<ul>
+    {% for food in foods %}
+        <li>
+            <a href="{{ food.get_url }}">
+                <div>
+                    <h2>{{ food.food_name }}</h2>
+                    <p>{{ food.description }}</p>
+                </div>
+            </a>
+        </li>    
+    {% endfor %}
+</ul>
+
+{% endblock %}

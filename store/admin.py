@@ -21,6 +21,10 @@ class FoodAdmin(admin.ModelAdmin):
 class FoodRecipeAdmin(admin.ModelAdmin):
     list_display = ('order', 'get_food_name', 'description')
 
+
+class FoodGalleryAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'get_food_name')
+
 admin.site.register(Food, FoodAdmin)
-admin.site.register(FoodGallery)
+admin.site.register(FoodGallery, FoodGalleryAdmin)
 admin.site.register(FoodRecipe, FoodRecipeAdmin)
