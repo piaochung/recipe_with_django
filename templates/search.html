@@ -6,14 +6,17 @@
 <!-- Section-->
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="title-page">Foods</h2>
+        <h2 class="title-page">Foods Search</h2>
+        <div class="form-inline">
+            <span class="mr-md-auto"><b>{{ food_count }}</b> items found </span>
+        </div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            {% for food in foods %}
+            {% for food in cat_foods %}
             <div class="col mb-5">
                 <!-- https://dummyimage.com/450x300/dee2e6/6c757d.jpg -->
                 <div class="card h-100"> 
                     <!-- Product image-->
-                    <img class="img-responsive" src="{{ food.image.url }}" alt="Food Image">
+                    <img src="{{ food.image.url }}" alt="Food Image">
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">

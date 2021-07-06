@@ -2,7 +2,7 @@ import os
 from uuid import uuid4
 
 def rename_imagefile_to_uuid(instance, filename):
-        upload_to = f'media/foods/{instance.food.slug}'
+        upload_to = f'media/foods/{instance}'
         ext = filename.split('.')[-1]
         uuid = uuid4().hex
 

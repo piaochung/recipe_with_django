@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<h2>Food Image</h2>
+<h2 class="title-page">Food Detail</h2>
 <ul>
     {% for food_image in food_gallery %}
     <li><img src="{{food_image.image.url}}" style="height: 100px;" alt="food_image"></li>
@@ -14,9 +14,9 @@
     {% for recipe in food_recipe %}
     <li>
         <h3>Step {{ recipe.order }}</h3>
-    <li>{{ recipe.description }}</li>
+        <p>{{ recipe.description }}</p>
     </li>
     {% endfor %}
 </ul>
 
-{% endblock %}
+{% endblock%}

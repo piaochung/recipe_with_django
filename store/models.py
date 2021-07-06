@@ -6,9 +6,11 @@ from righteous.utils import rename_imagefile_to_uuid
 # Create your models here.
 class Food(models.Model):
     food_name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to=rename_imagefile_to_uuid, max_length=255)
     description = models.TextField(max_length=200, blank=True, null=True)
     slug = models.SlugField(blank=True, null=True)
-    active = models.BooleanField(default=False)
+    
+    is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -24,7 +26,7 @@ class Food(models.Model):
     salt = models.FloatField()
 
     def __str__(self):
-        return self.food_name
+        return self.slug
 
     def get_url(self):
         return reverse('food_detail', args=[self.category.slug, self.slug])

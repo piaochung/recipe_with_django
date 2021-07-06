@@ -13,7 +13,7 @@ class FoodRecipeInline(admin.TabularInline):
 
 
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ('food_name', 'category', 'description', 'created_at', 'updated_at', 'active')
+    list_display = ('food_name', 'category', 'description', 'created_at', 'updated_at', 'is_active')
     prepopulated_fields = {'slug': ('food_name',)}
     inlines = [FoodGalleryInline, FoodRecipeInline]
 
